@@ -51,7 +51,7 @@ const MainContextReducer = (state: initialStateProps, action: actionProps) => {
     case "main/draw":
       return state;
 
-    case "main/playAgin":
+    case "main/playAgain":
       return {
         ...state,
         isGameRulesOn: false,
