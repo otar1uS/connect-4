@@ -1,13 +1,13 @@
-import CheckIcon from "../assets/images/icon-check.svg";
-import { useGlobalContext } from "./store/Context";
+import { useContext } from "react";
+import { MainContext } from "./store/MainContext";
 
 const GameRulesModal = () => {
-  const { isGameRulesOn, closeHandler } = useGlobalContext();
+  const { state, dispatch } = useContext(MainContext);
 
   return (
     <div
       className={`${
-        isGameRulesOn
+        state.isGameRulesOn
           ? "bg-DarkPurple w-full h-full  z-10 fixed  grid  place-items-center  inset-0 ease-linear  transition  delay-150"
           : "hidden"
       }`}
@@ -49,7 +49,10 @@ const GameRulesModal = () => {
           </ol>
         </div>
 
-        <button className="absolute bottom-[-3rem]" onClick={closeHandler}>
+        <button
+          className="absolute bottom-[-3rem]"
+          onClick={() => dispatch({ type: "main/gameRulesOn" })}
+        >
           <svg
             width="70px"
             height="75px"

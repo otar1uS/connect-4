@@ -1,12 +1,11 @@
-import Logo from "../../assets/images/logo.svg";
-import PVP from "../../assets/images/player-vs-player.svg";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../store/Context";
+import { useContext } from "react";
+import { MainContext } from "../store/MainContext";
 import GameRulesModal from "../GameRules";
-type Props = {};
+import { Logo, PVP } from "../../assets/images/images";
 
-const Home = (props: Props) => {
-  const { openHandler } = useGlobalContext();
+const Home = () => {
+  const { dispatch } = useContext(MainContext);
   return (
     <>
       <div className="w-full h-screen flex justify-center items-center bg-DarkPurple     ">
@@ -18,7 +17,7 @@ const Home = (props: Props) => {
             </div>
           </Link>
           <div
-            onClick={openHandler}
+            onClick={() => dispatch({ type: "main/gameRulesOn" })}
             className="min-w-[335px] sm:min-w-[400px] h-[72px] font-bold text-[24px] leading-[24px] bg-PureWhite border-DarkBlack border-[3px] border-solid rounded-[20px] pl-[20px] cursor-pointer hover:shadow-hover  shadow-main flex  justify-start items-center"
           >
             GAME RULES

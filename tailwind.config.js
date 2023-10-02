@@ -9,6 +9,7 @@ export default {
       hover: "0px 10px 0px #5C2DD5",
     },
     colors: {
+      grayColor: " rgba(0, 0, 0, 0.40) ",
       DarkBlack: "#000000",
       DarkPurple: "#5C2DD5",
       LightPurple: "#7945FF",
