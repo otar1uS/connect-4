@@ -1,4 +1,1 @@
-
-
-(./preview.jpg)
-
+![GAME PREVIEW](./preview.jpg)
